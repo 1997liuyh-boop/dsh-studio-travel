@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "travel",
+  "name": "旅行",
+  "icon": "✈️",
+  "description": "StarMap：地球足迹、国家城市、路线、相册与旅程时间线",
+  "order": 10,
+  "entry": "/studio-projects/travel",
+  "capabilities": [],
+  "compatibility": {
+    "host": "0.2.1-rc.2",
+    "runtime": "^0.5.0",
+    "worktable": "^0.6.0"
+  }
+}

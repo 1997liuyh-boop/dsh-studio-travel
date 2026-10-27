@@ -1,0 +1,17 @@
+@reference "tailwindcss";
+
+.studio-map-dialog {
+  @apply m-auto max-h-[85dvh] w-[min(30rem,calc(100vw-2rem))] overflow-y-auto rounded-[1.25rem] border border-[#ffffff26] bg-[#171b29] p-0 text-[#f1f3ff] shadow-2xl;
+}
+.studio-map-dialog::backdrop { @apply bg-black/60; }
+.studio-map-form { @apply flex flex-col gap-[1rem] p-[1.5rem]; }
+.studio-map-form p { @apply m-0 text-[0.8125rem] leading-[1.7] text-[#b1bacd]; }
+.studio-map-form [role="alert"] { @apply text-[#ffb4b4]; }
+.studio-map-heading { @apply flex items-center justify-between gap-[1rem]; }
+.studio-map-heading h2 { @apply m-0 text-[1.125rem] font-semibold; }
+.studio-map-form label { @apply flex flex-col gap-[0.5rem] text-[0.875rem]; }
+.studio-map-form input,
+.studio-map-form select { @apply min-h-[2.75rem] w-full min-w-0 rounded-[0.75rem] border border-[#ffffff26] bg-[#0d111c] px-[0.75rem] text-[0.875rem] text-[#f1f3ff] [color-scheme:dark] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a69cff]; }
+.studio-map-form button { @apply cursor-pointer rounded-[0.625rem] border border-[#ffffff26] bg-[#ffffff0a] px-[0.875rem] py-[0.5rem] text-[0.8125rem] text-[#f1f3ff] hover:bg-[#ffffff1a] disabled:cursor-default disabled:opacity-40; }
+.studio-map-actions { @apply flex flex-wrap justify-between gap-[0.75rem]; }
+.studio-map-actions button[type="submit"] { @apply border-[#a69cff] bg-[#7769d4] hover:bg-[#8879e5]; }

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "name": "dsh-studio-travel",
+  "version": "0.1.0",
+  "kind": "studio",
+  "packages": [
+    {
+      "id": "travel",
+      "path": "studios/travel"
+    }
+  ]
+}
