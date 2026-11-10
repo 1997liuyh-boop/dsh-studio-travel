@@ -2,7 +2,9 @@
 
 [English](README.md)
 
-**仓库名称：** $n\n\n**仓库描述：**基于 StarMap 的旅行工作室，用于记录旅行足迹、地点、路线、相册和旅程时间线。
+**仓库名称：** `dsh-studio-travel`
+
+**仓库描述：**基于 StarMap 的旅行工作室，用于记录旅行足迹、地点、路线、相册和旅程时间线。
 
 `dsh-studio-travel` 将开源 [StarMap](https://github.com/Aisland-SJL/StarMap) 适配为独立安装的 DSH 工作室。DSH 工作台提供工作室列表和项目容器；本插件提供旅行页面及本地数据接入。
 

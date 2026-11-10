@@ -2,7 +2,9 @@
 
 [简体中文](README.zh.md)
 
-**Repository name:** $n\n\n**Repository description:** StarMap-based travel studio for recording visited places, routes, albums, and trip timelines.
+**Repository name:** `dsh-studio-travel`
+
+**Repository description:** StarMap-based travel studio for recording visited places, routes, albums, and trip timelines.
 
 `dsh-studio-travel` adapts the open-source [StarMap](https://github.com/Aisland-SJL/StarMap) application as an independently installed DSH studio. The DSH worktable supplies the studio list and project container; this package supplies the travel page and its local data integration.
 
