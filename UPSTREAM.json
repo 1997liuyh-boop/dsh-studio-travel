@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/Aisland-SJL/StarMap",
+  "commit": "17eebdf8f6e942906041f6b1069acba7d559f76e",
+  "license": "MIT",
+  "source": "upstream/StarMap",
+  "adaptation": [
+    "src/atlas.mjs",
+    "vite.config.mjs"
+  ]
+}

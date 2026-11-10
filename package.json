@@ -1,55 +1,119 @@
 {
-  "name": "dsh-studio-travel-source",
-  "version": "0.1.0",
-  "private": true,
+  "name": "dsh-studio-travel",
+  "version": "0.2.0",
+  "description": "StarMap：地球足迹、国家城市、路线、相册与旅程时间线",
   "type": "module",
   "license": "MIT",
-  "description": "旅行工作室独立源码与构建入口",
   "engines": {
-    "node": ">=22"
+    "node": ">=22",
+    "dsh": "0.2.1-rc.2 || >=0.2.2-rc.1 <0.2.2"
+  },
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "dsh.plugin.json",
+    "README.md",
+    "LICENSE",
+    "static",
+    "upstream",
+    "patches",
+    "app",
+    "studio.json",
+    "sources.json",
+    "UPSTREAM.json",
+    "THIRD_PARTY_NOTICES.md",
+    "scripts/start.ps1"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    },
+    "compatibility": {
+      "dsh": "0.2.1-rc.2",
+      "dshReleases": {
+        "0.2.1-rc.2": "experimental"
+      }
+    }
+  },
+  "peerDependencies": {
+    "dsh-studio-projects": "^0.5.0",
+    "dsh-worktable": "^0.6.0"
+  },
+  "peerDependenciesMeta": {
+    "dsh-studio-projects": {
+      "optional": true
+    },
+    "dsh-worktable": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check-install.mjs"
+  },
+  "dependencies": {
+    "sharp": "0.35.3",
+    "undici": "8.10.0",
+    "world-countries": "5.1.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/1997liuyh-boop/dsh-studio-travel.git"
   },
-  "scripts": {
-    "build": "node scripts/build.mjs",
-    "check": "node scripts/check.mjs",
-    "pack": "node scripts/pack.mjs"
+  "homepage": "https://github.com/1997liuyh-boop/dsh-studio-travel#readme",
+  "bugs": {
+    "url": "https://github.com/1997liuyh-boop/dsh-studio-travel/issues"
   },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "studio"
+  ],
   "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@photo-sphere-viewer/core": "5.14.1",
     "@tailwindcss/postcss": "^4.1.0",
+    "@tailwindcss/vite": "4.3.0",
     "@types/node": "24.12.4",
     "@types/react": "19.2.15",
     "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "cesium": "1.142.0",
     "esbuild": "^0.28.2",
+    "eslint": "10.4.1",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.5.2",
+    "exifr": "7.1.3",
+    "globals": "17.6.0",
+    "jsdom": "^26.1.0",
+    "lucide-react": "1.17.0",
     "postcss": "8.5.15",
     "react": "19.2.6",
     "react-dom": "19.2.6",
-    "tailwindcss": "4.3.0",
-    "typescript": "6.0.3",
-    "@photo-sphere-viewer/core": "5.14.1",
-    "@tailwindcss/vite": "4.3.0",
-    "cesium": "1.142.0",
-    "exifr": "7.1.3",
-    "lucide-react": "1.17.0",
     "react-globe.gl": "2.38.0",
     "react-markdown": "10.1.0",
     "remark-gfm": "4.0.1",
     "resium": "1.23.0",
+    "sharp": "0.35.3",
+    "tailwindcss": "4.3.0",
     "three": "0.184.0",
-    "@eslint/js": "10.0.1",
-    "@vitejs/plugin-react": "6.0.2",
-    "eslint": "10.4.1",
-    "eslint-plugin-react-hooks": "7.1.1",
-    "eslint-plugin-react-refresh": "0.5.2",
-    "globals": "17.6.0",
+    "typescript": "6.0.3",
     "typescript-eslint": "8.60.0",
+    "undici": "8.10.0",
     "vite": "8.0.14",
     "vite-plugin-cesium": "1.2.23",
-    "sharp": "0.35.3",
-    "undici": "8.10.0",
-    "world-countries": "5.1.0",
-    "jsdom": "^26.1.0"
+    "world-countries": "5.1.0"
   }
 }

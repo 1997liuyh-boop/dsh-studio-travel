@@ -1,0 +1,14 @@
+{
+  "name": "dsh-studio-travel",
+  "version": "0.2.0",
+  "description": "StarMap：地球足迹、国家城市、路线、相册与旅程时间线",
+  "entry": {
+    "name": "dsh-studio-travel",
+    "inject": [
+      "studioProjects"
+    ]
+  },
+  "client": {
+    "platform": "web"
+  }
+}
