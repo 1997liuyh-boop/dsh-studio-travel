@@ -1,26 +1,43 @@
-# 旅行工作室
+# dsh-studio-travel
 
-独立的 StarMap 旅行工作室，用于记录地球足迹、国家和城市、路线、相册以及旅程时间线。地图页面、数据和配置由本工作室管理，其他工作室不会读取这些内容。
+[简体中文](README.zh.md)
 
-## 功能
+**Repository name:** $n\n\n**Repository description:** StarMap-based travel studio for recording visited places, routes, albums, and trip timelines.
 
-- 地球与地图浏览：查看国家、城市、足迹和已保存地点。
-- 路线规划：按顺序组织地点、日期、交通和行程备注。
-- 相册与旅程时间线：关联照片、说明和旅行阶段，按日期回顾。
-- 地图服务设置：配置 Cesium ion Token、天地图浏览器端密钥和默认图源；留空保留已有值，也可分别清除。
-- 本地数据管理：配置写入外置旅行数据目录，页面保存后刷新即可生效；不把 Token 写入源码或插件包。
-- DSH 会话控制：通过共享运行时读取真实页面状态，连接失败时显示原因和重试入口。
+`dsh-studio-travel` adapts the open-source [StarMap](https://github.com/Aisland-SJL/StarMap) application as an independently installed DSH studio. The DSH worktable supplies the studio list and project container; this package supplies the travel page and its local data integration.
 
-## 安装与构建
+## Features
 
-先安装 [工作室容器与共享运行时](https://github.com/1997liuyh-boop/dsh-studio-library)，再通过 dsh 插件管理器添加本仓库。需要 Node.js 22 及 npm，运行 `npm install --include=dev --legacy-peer-deps`、`npm run build`、`npm run check`。
+- Browse a globe and map with countries, cities, saved places, and travel footprints.
+- Organize routes with ordered destinations, dates, transport, and notes.
+- Keep trip photos, captions, and timeline entries together.
+- Configure Cesium ion, Tianditu, and the default map source in the studio settings.
+- Store travel data in the configured local studio data directory. Credentials are not written into source files or the plugin package.
+- Use the shared DSH session controls; connection failures are reported with a retry action.
 
-Cesium 和地图资源按仓库构建配置使用；默认低清图源可离线显示，外部图源需要对应 Token 和网络。来源与锁定提交见 `UPSTREAM.json`。
+## Installation
 
-## 限制
+This repository declares a DSH bundle at `package.json` → `dsh.bundle.patch`. Install with the DSH Desktop plugin manager. Add the control package first, then this exact tagged source:
 
-地图服务的可用性、配额和授权由服务提供方决定。清理 DSH 工作室目录前请备份旅行数据；插件不会把个人相册上传到仓库，也不会自动同步其他设备。
+```text
+github:1997liuyh-boop/dsh-studio-library#v0.1.3
+github:1997liuyh-boop/dsh-studio-travel#v0.2.1
+```
 
-## 更新已安装插件
+Confirm that the plugin manager lists `dsh-studio-travel` version `0.2.1`, then open the Travel studio. The package requires compatible `dsh-worktable` `^0.6.0` and `dsh-studio-projects` `^0.5.0` packages. In the UI, add them by installing the control package above.
 
-GitHub 代码提交不会自动更新 Desktop profile 中已经锁定的安装版本。请通过插件管理器重新安装本仓库来源；旧共享组合库的用户请先按[控制层迁移步骤](https://github.com/1997liuyh-boop/dsh-studio-library#更新与旧组合库迁移)保留现有子工作室，再移除旧组合库。工作室内升级需要已发布的适配安装包。
+For local development, use Node.js 22 and npm:
+
+```sh
+npm install --include=dev --legacy-peer-deps
+npm run build
+npm run check
+```
+
+## Requirements and limitations
+
+The bundled low-resolution map source can work offline. External map providers require network access and their own credentials. Provider availability, quotas, and usage rights are set by those providers. Local albums and travel records are not uploaded to this repository or synchronized automatically between devices. Back up the travel data before clearing the DSH studio data directory.
+
+## Sources and license
+
+Original source: [Aisland-SJL/StarMap](https://github.com/Aisland-SJL/StarMap), commit `17eebdf8f6e942906041f6b1069acba7d559f76e`, MIT. The upstream record and adaptations are listed in [UPSTREAM.json](UPSTREAM.json). This repository's adaptation code is MIT licensed; see [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
