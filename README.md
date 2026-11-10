@@ -1,20 +1,26 @@
-# dsh-studio-travel
+# 旅行工作室
 
-StarMap：地球足迹、国家城市、路线、相册与旅程时间线
+独立的 StarMap 旅行工作室，用于记录地球足迹、国家和城市、路线、相册以及旅程时间线。地图页面、数据和配置由本工作室管理，其他工作室不会读取这些内容。
 
-本仓库根目录是可安装的 DSH 插件，版本 0.2.0。在插件市场添加本仓库 Git URL，安装后启用。先安装并启用 [工作室容器与共享运行时](https://github.com/1997liuyh-boop/dsh-studio-library)，再启用本插件。
+## 功能
 
-Git 安装使用已提交的 lib/ 与静态资源。开发时执行 npm install --include=dev --legacy-peer-deps、npm run build、npm run check；构建只使用本仓库源码与公开依赖，不引用相邻工作库。
+- 地球与地图浏览：查看国家、城市、足迹和已保存地点。
+- 路线规划：按顺序组织地点、日期、交通和行程备注。
+- 相册与旅程时间线：关联照片、说明和旅行阶段，按日期回顾。
+- 地图服务设置：配置 Cesium ion Token、天地图浏览器端密钥和默认图源；留空保留已有值，也可分别清除。
+- 本地数据管理：配置写入外置旅行数据目录，页面保存后刷新即可生效；不把 Token 写入源码或插件包。
+- DSH 会话控制：通过共享运行时读取真实页面状态，连接失败时显示原因和重试入口。
 
-## 功能与上游说明
+## 安装与构建
 
+先安装 [工作室容器与共享运行时](https://github.com/1997liuyh-boop/dsh-studio-library)，再通过 dsh 插件管理器添加本仓库。需要 Node.js 22 及 npm，运行 `npm install --include=dev --legacy-peer-deps`、`npm run build`、`npm run check`。
 
-StarMap：地球足迹、国家城市、路线、相册与旅程时间线。本插件有独立的页面源码、宿主注册、构建与发布版本。
+Cesium 和地图资源按仓库构建配置使用；默认低清图源可离线显示，外部图源需要对应 Token 和网络。来源与锁定提交见 `UPSTREAM.json`。
 
-从库根目录构建：`node scripts/build.mjs travel`。依赖 dsh-worktable ^0.6.0 与 dsh-studio-projects ^0.5.0。
+## 限制
 
-来源及锁定提交见 [UPSTREAM.json](UPSTREAM.json)。
+地图服务的可用性、配额和授权由服务提供方决定。清理 DSH 工作室目录前请备份旅行数据；插件不会把个人相册上传到仓库，也不会自动同步其他设备。
 
-图源菜单提供“地图服务配置”，可配置 Cesium ion Token 和天地图浏览器端应用密钥。支持保存并应用、留空保留、分别清除，以及选择默认图源。天地图影像和中文注记使用同一密钥；输入框默认掩码，已保存的凭据不回填。
+## 更新已安装插件
 
-配置保存到外置旅行数据目录的 `config/map-config.json`，不进入源码与插件包。运行时加载配置，修改后刷新页面即可，无需重新构建；本地低清图源仍可直接使用。工作室运行时统一验证所有者身份，保存接口另外要求 JSON 和专用请求头。
+GitHub 代码提交不会自动更新 Desktop profile 中已经锁定的安装版本。请通过插件管理器重新安装本仓库来源；旧共享组合库的用户请先按[控制层迁移步骤](https://github.com/1997liuyh-boop/dsh-studio-library#更新与旧组合库迁移)保留现有子工作室，再移除旧组合库。工作室内升级需要已发布的适配安装包。
