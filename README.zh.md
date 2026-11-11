@@ -23,7 +23,7 @@
 
 ```text
 github:1997liuyh-boop/dsh-studio-library#v0.1.3
-github:1997liuyh-boop/dsh-studio-travel#v0.2.1
+github:1997liuyh-boop/dsh-studio-travel#v0.2.6
 ```
 
 确认插件管理器显示 `dsh-studio-travel` 版本 `0.2.1`，然后打开“旅行”工作室。本插件要求兼容的 `dsh-worktable ^0.6.0` 和 `dsh-studio-projects ^0.5.0`；通过先安装上面的控制包添加这些依赖。

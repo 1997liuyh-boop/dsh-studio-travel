@@ -1,6 +1,6 @@
 {
   "name": "dsh-studio-travel",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "StarMap：地球足迹、国家城市、路线、相册与旅程时间线",
   "type": "module",
   "license": "MIT",
@@ -12,7 +12,8 @@
   "exports": {
     ".": "./lib/index.js",
     "./client": "./lib/client.js",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
   },
   "files": [
     "lib",
@@ -28,7 +29,8 @@
     "sources.json",
     "UPSTREAM.json",
     "THIRD_PARTY_NOTICES.md",
-    "scripts/start.ps1"
+    "scripts/start.ps1",
+    "locale"
   ],
   "dsh": {
     "bundle": {

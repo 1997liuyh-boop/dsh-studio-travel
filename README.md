@@ -23,7 +23,7 @@ This repository declares a DSH bundle at `package.json` → `dsh.bundle.patch`. 
 
 ```text
 github:1997liuyh-boop/dsh-studio-library#v0.1.3
-github:1997liuyh-boop/dsh-studio-travel#v0.2.1
+github:1997liuyh-boop/dsh-studio-travel#v0.2.6
 ```
 
 Confirm that the plugin manager lists `dsh-studio-travel` version `0.2.1`, then open the Travel studio. The package requires compatible `dsh-worktable` `^0.6.0` and `dsh-studio-projects` `^0.5.0` packages. In the UI, add them by installing the control package above.
